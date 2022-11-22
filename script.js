@@ -150,7 +150,7 @@ function getRandomIntInclusive(min, max) {
     const url = 'https://data.montgomerycountymd.gov/resource/k9nj-z35d.json'; // remote URL! you can test it in your browser
     const data = await fetch(url); // We're using a library that mimics a browser 'fetch' for simplicity
     const json = await data.json(); // the data isn't json until we access it using dot notation
-    const reply = json // .filter((item) => Boolean(item.city)).filter((item) => Boolean(item.name));
+    const reply = json.filter((item) => Boolean(item.city)).filter((item) => Boolean(item.street_address));
     console.log(reply);
     return reply;
   }
