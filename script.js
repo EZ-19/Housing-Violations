@@ -27,7 +27,7 @@ function getRandomIntInclusive(min, max) {
   
     list.forEach((item) => {
       const el = document.createElement('li');
-      el.innerText = item.name;
+      el.innerText = item.street_address;
       listEl.appendChild(el);
     });
   }
@@ -62,7 +62,7 @@ function getRandomIntInclusive(min, max) {
   
   function filterList(array, filterInputValue) {
     const newArray = array.filter((item) => {
-      const lowerCaseName = item.name.toLowerCase();
+      const lowerCaseName = item.street_address.toLowerCase();
       const lowerCaseQuery = filterInputValue.toLowerCase();
       return lowerCaseName.includes(lowerCaseQuery);
     });
@@ -103,7 +103,7 @@ function getRandomIntInclusive(min, max) {
     const data = {
       labels: labels,
       datasets: [{
-        label: 'Restaurants By Category',
+        label: 'Housing Violation Cases by Disposition',
         backgroundColor: 'rgb(255, 99, 132)',
         bordercolor: 'rgb(255, 99, 132)',
         data: info
@@ -111,7 +111,7 @@ function getRandomIntInclusive(min, max) {
     };
   
     const config = {
-      type: 'line',
+      type: 'bar',
       data: data,
       options: {}
     };
@@ -137,20 +137,21 @@ function getRandomIntInclusive(min, max) {
   
   function shapeDataForLineChart(array) {
     return array.reduce((collection, item) => {
-      if (!collection[item.category]) {
-        collection[item.category] = [item];
+      if (!collection[item.disposition]) {
+        collection[item.disposition] = [item];
       } else {
-        collection[item.category].push(item);
+        collection[item.disposition].push(item);
       }
       return collection;
     }, {});
   }
   
   async function getData() {
-    const url = 'https://data.princegeorgescountymd.gov/resource/umjn-t2iz.json'; // remote URL! you can test it in your browser
+    const url = 'https://data.montgomerycountymd.gov/resource/k9nj-z35d.json'; // remote URL! you can test it in your browser
     const data = await fetch(url); // We're using a library that mimics a browser 'fetch' for simplicity
     const json = await data.json(); // the data isn't json until we access it using dot notation
-    const reply = json.filter((item) => Boolean(item.geocoded_column_1)).filter((item) => Boolean(item.name));
+    const reply = json // .filter((item) => Boolean(item.city)).filter((item) => Boolean(item.name));
+    console.log(reply);
     return reply;
   }
   
@@ -174,6 +175,8 @@ function getRandomIntInclusive(min, max) {
   
     // API Data Request
     const chartData = await getData();
+    console.log("Chart DATA");
+    console.log(chartData);
     const shapedData = shapeDataForLineChart(chartData);
     console.log(shapedData);
     const myChart = initChart(chartTarget, shapedData);
