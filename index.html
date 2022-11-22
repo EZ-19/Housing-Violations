@@ -1,14 +1,48 @@
+<!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Group Project Base</title>
-    <link rel="stylesheet" href="styles.css">
-</head>
-<body style="background-color: rgb(251, 241, 227);">
-    <h1>INST377 103 Group 15</h1>
-    <!--Pull Request Test Comment-->
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Montgomery County Housing Violations</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.2/dist/leaflet.css"
+     integrity="sha256-sA+zWATbFveLLNqWO2gtiw3HL/lh1giY/Inf1BJ0z14="
+     crossorigin=""/>
+    <link rel="stylesheet" href="styles.css" />
+    <script src="https://unpkg.com/leaflet@1.9.2/dist/leaflet.js"
+    integrity="sha256-o9N1jGDZrf5tS+Ft4gbIK7mYMipq9lqpVJ91xHSyKhg="
+    crossorigin=""></script>
+  </head>
+  <body>
+    <div class="wrapper">
+      <header class="header">
+        <h1>Montgomery County Housing Violations</h1>
+      </header>
+      <div class="container">
+        <div class="left_section box">
+          <h2>Form Inputs</h2>
+          <form action="/api" class="mob_sub box main_form">
+            <div>
+            <p>Filter Property List</p>
+            <label for="resto"></label>
+            <input type="text" name="resto" id="resto" />
+            </div>
+            <div class="lds-ellipsis"><div></div><div></div><div></div><div></div></div>
+            <button type="submit" id="get-resto">Change Properties</button>
+          </form>
+        </div>
+        <div class="right_section box">
+          <h2>Properties</h2>
+          <div id="map"></div>
+          <div class="mob_sub box" id="resturant_list">
+            A list of properties from an API
+          </div>
+        </div>
+      </div>
+      <footer class="footer box">
+        <h3>GitHub: <a href="https://github.com/EZ-19/Housing-Violations">Link</a></h3>
+      </footer>
+    </div>
     <script src="./script.js"></script>
-</body>
+  </body>
 </html>
