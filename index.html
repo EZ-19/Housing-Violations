@@ -5,13 +5,15 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Montgomery County Housing Violations</title>
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.2/dist/leaflet.css"
+    <!-- <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.2/dist/leaflet.css"
      integrity="sha256-sA+zWATbFveLLNqWO2gtiw3HL/lh1giY/Inf1BJ0z14="
-     crossorigin=""/>
+     crossorigin=""/> -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
     <link rel="stylesheet" href="styles.css" />
-    <script src="https://unpkg.com/leaflet@1.9.2/dist/leaflet.js"
+    <!-- <script src="https://unpkg.com/leaflet@1.9.2/dist/leaflet.js"
     integrity="sha256-o9N1jGDZrf5tS+Ft4gbIK7mYMipq9lqpVJ91xHSyKhg="
-    crossorigin=""></script>
+    crossorigin=""></script> -->
   </head>
   <body>
     <div class="wrapper">
@@ -33,14 +35,18 @@
         </div>
         <div class="right_section box">
           <h2>Properties</h2>
-          <div id="map"></div>
+          <!-- <div id="map"></div> -->
+          <div class="chart_container">
+            <canvas id="myChart"></canvas>
+          </div>
+          
           <div class="mob_sub box" id="resturant_list">
             A list of properties from an API
           </div>
         </div>
       </div>
       <footer class="footer box">
-        <h3>GitHub: <a href="https://github.com/EZ-19/Housing-Violations">INST377-103 Group 15</a></h3>
+        <h3>GitHub <a href="https://github.com/EZ-19/Housing-Violations">Link</a></h3>
       </footer>
     </div>
     <script src="./script.js"></script>
