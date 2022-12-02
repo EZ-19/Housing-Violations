@@ -111,7 +111,7 @@ function getRandomIntInclusive(min, max) {
     };
   
     const config = {
-      type: 'bar',
+      type: 'pie',
       data: data,
       options: {}
     };
