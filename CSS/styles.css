@@ -135,6 +135,12 @@ form {
   text-decoration: none;
 }
 
+.footer img {
+  padding-top: 1rem;
+  max-width: 50%;
+  max-height: 50%;
+}
+
 .subtitle {
   color: rgba(0, 0, 0, 0.8);
   margin: 0px;
