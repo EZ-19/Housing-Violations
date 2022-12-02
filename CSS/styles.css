@@ -119,6 +119,10 @@ form {
   align-content: center;
 }
 
+.next_page{
+  font-size: 1rem;
+}
+
 .footer {
   flex-shrink: 0;
   padding: 1rem;
