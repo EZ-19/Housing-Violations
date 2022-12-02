@@ -78,13 +78,19 @@ form {
   /* shapes */
   border: 2px solid;
   border-radius: 6px;
-  font-size: 1.5rem;
+  font-size: 3rem;
   padding: 1.25rem;
   margin:0; /* removing the margin on h1 tags means the header pins to the top if we move */
 
 
   /* box-shadows are fancy */
   box-shadow: 0 0.5em 1em -0.125em rgb(10 10 10 / 10%), 0 0 0 1px rgb(10 10 10 / 2%);
+}
+
+.header img {
+  max-width: 5%;
+  max-height: 5%;
+ 
 }
 
 .box {
@@ -113,6 +119,10 @@ form {
   align-content: center;
 }
 
+.next_page{
+  font-size: 1rem;
+}
+
 .footer {
   flex-shrink: 0;
   padding: 1rem;
@@ -133,6 +143,12 @@ form {
   /* red, green, blue, alpha */
   color: rgb(247, 9, 255);
   text-decoration: none;
+}
+
+.footer img {
+  padding-top: 1rem;
+  max-width: 50%;
+  max-height: 50%;
 }
 
 .subtitle {
