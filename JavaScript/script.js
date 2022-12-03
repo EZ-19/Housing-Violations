@@ -121,7 +121,32 @@ function getRandomIntInclusive(min, max) {
       config
     );
   }
+  function initChart2(chart, object) {
+    const labels = Object.keys(object);
+    const info = Object.keys(object).map((item) => object[item].length);
   
+    const data = {
+      labels: labels,
+      datasets: [{
+        label: 'Housing Violation Cases by Location',
+        backgroundColor: 'rgb(255, 99, 132)',
+        bordercolor: 'rgb(255, 99, 132)',
+        data: info
+      }]
+    };
+  
+    const config = {
+      type: 'bar',
+      data: data,
+      options: {}
+    };
+  
+    return new Chart(
+      chart,
+      config
+    );
+    }
+
   function changeChart(chart, dataObject) {
     const labels = Object.keys(dataObject);
     const info = Object.keys(dataObject).map((item) => dataObject[item].length);
@@ -145,7 +170,18 @@ function getRandomIntInclusive(min, max) {
       return collection;
     }, {});
   }
-  
+
+  function shapeDataForLineChart2(array) {
+    return array.reduce((collection, item) => {
+      if (!collection[item.location_description]) {
+        collection[item.location_description] = [item];
+      } else {
+        collection[item.location_description].push(item);
+      }
+      return collection;
+    }, {});
+  }
+
   async function getData() {
     const url = 'https://data.montgomerycountymd.gov/resource/k9nj-z35d.json'; // remote URL! you can test it in your browser
     const data = await fetch(url); // We're using a library that mimics a browser 'fetch' for simplicity
@@ -163,8 +199,10 @@ function getRandomIntInclusive(min, max) {
     const submit = document.querySelector('#get-resto'); // get a reference to your submit button
     const loadAnimation = document.querySelector('.lds-ellipsis');
     const chartTarget = document.querySelector('#myChart');
+    const chartTarget2 = document.querySelector('#myChart2');
     submit.style.display = 'none'; // let your submit button disappear
-  
+    
+    
     /*
         Let's get some data from the API - it will take a second or two to load
         This next line goes to the request for 'GET' in the file at /server/routes/foodServiceRoutes.js
@@ -180,6 +218,8 @@ function getRandomIntInclusive(min, max) {
     const shapedData = shapeDataForLineChart(chartData);
     console.log(shapedData);
     const myChart = initChart(chartTarget, shapedData);
+    const shapedData2 = shapeDataForLineChart2(chartData);
+    const myChart2 = initChart2(chartTarget2, shapedData2);
   
     // console.log(arrayFromJson.data[0]);
   
@@ -205,6 +245,9 @@ function getRandomIntInclusive(min, max) {
       const localData = shapeDataForLineChart(newFilterList);
       changeChart(myChart, localData);
       console.log(localData);
+      const localData2 = shapeDataForLineChart2(newFilterList);
+      changeChart(myChart2, localData2);
+
       // markerPlace(newFilterList, pageMap);
     });
   
@@ -223,6 +266,9 @@ function getRandomIntInclusive(min, max) {
       const localData = shapeDataForLineChart(currentList);
       changeChart(myChart, localData);
       console.log(localData);
+      const localData2 = shapeDataForLineChart2(currentList);
+      changeChart(myChart2, localData2);
+
       // markerPlace(currentList, pageMap);
       // By separating the functions, we open the possibility of regenerating the list
       // without having to retrieve fresh data every time
