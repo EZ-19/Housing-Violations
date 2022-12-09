@@ -1,4 +1,13 @@
-# This is your ReadMe
+# Montgomery County Housing-Violations
+[Github pages sites](https://ez-19.github.io/Housing-Violations/)
+
+## Project Documentation 
+[Montgomery County API] (https://data.montgomerycountymd.gov/Consumer-Housing/Housing-Code-Violations/k9nj-z35d)
+
+JavaScript Dependencies [ChartJS] (https://www.chartjs.org/)
+
+Application is for Andoria/IOS/Desktop environment. 
+
 You are required to fill it in with documentation similar to that found in the Sequelize example for the course as part of your final project.
 
 ### How to use Markdown
