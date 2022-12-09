@@ -104,7 +104,17 @@ function getRandomIntInclusive(min, max) {
       labels: labels,
       datasets: [{
         label: 'Housing Violation Cases by City',
-        backgroundColor: 'rgb(255, 99, 132)',
+        backgroundColor: ['rgb(255, 99, 132)',
+                          'rgb(54, 162, 235)',
+                          'rgb(155, 19, 112)',
+                          'rgb(34, 162, 115)',
+                          'rgb(155, 69, 132)',
+                          'rgb(204, 2, 55)',
+                          'rgb(65, 100, 62)',
+                          'rgb(74, 72, 73)',
+                          'rgb(115, 2, 123)',
+                          'rgb(34, 62, 235)',
+                          'rgb(55, 110, 3)'],
         bordercolor: 'rgb(255, 99, 132)',
         data: info
       }]

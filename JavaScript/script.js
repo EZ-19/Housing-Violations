@@ -129,8 +129,8 @@ function getRandomIntInclusive(min, max) {
       labels: labels,
       datasets: [{
         label: 'Housing Violation Cases by Location',
-        backgroundColor: 'rgb(255, 99, 132)',
-        bordercolor: 'rgb(255, 99, 132)',
+        backgroundColor: 'rgb(65, 100, 62)',
+        bordercolor: 'rgb(74, 72, 73)',
         data: info
       }]
     };
