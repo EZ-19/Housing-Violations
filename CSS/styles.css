@@ -362,7 +362,12 @@ form label {
   }
 
   .chart_container {
-    height: 100%;
-    width: 100%;
+    height: 80%;
+    width: 80%;
+  }
+
+  .chart_container2 {
+    height: 50%;
+    width: 50%;
   }
     
