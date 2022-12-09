@@ -2,9 +2,9 @@
 [Github pages sites](https://ez-19.github.io/Housing-Violations/)
 
 ## Project Documentation 
-[Montgomery County API] (https://data.montgomerycountymd.gov/Consumer-Housing/Housing-Code-Violations/k9nj-z35d)
+[Montgomery County API](https://data.montgomerycountymd.gov/Consumer-Housing/Housing-Code-Violations/k9nj-z35d)
 
-JavaScript Dependencies [ChartJS] (https://www.chartjs.org/)
+JavaScript Dependencies [ChartJS](https://www.chartjs.org/)
 
 Application is for Andoria/IOS/Desktop environment. 
 
